@@ -10,9 +10,9 @@ export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: '#202024' }}>
       {fontsLoaded ? <Text>Hello world!</Text> : <View />}
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
