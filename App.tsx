@@ -4,15 +4,23 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { TamaguiProvider, Text, View } from 'tamagui';
+
+import tamaguiConfig from './tamagui.config';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
+  if (!fontsLoaded) return null;
+
   return (
-    <View style={{ flex: 1, backgroundColor: '#202024' }}>
-      {fontsLoaded ? <Text>Hello world!</Text> : <View />}
+    <TamaguiProvider config={tamaguiConfig}>
       <StatusBar style="light" />
-    </View>
+      <View f={1} jc="center" ai="center" bc="#101012">
+        <Text fontFamily="$roboto" fontWeight="$bold" color="$gray1">
+          Hello, world!
+        </Text>
+      </View>
+    </TamaguiProvider>
   );
 }

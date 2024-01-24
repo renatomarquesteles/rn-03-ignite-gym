@@ -28,6 +28,10 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "platforms": [
+      "android",
+      "ios"
+   ]
   }
 }
