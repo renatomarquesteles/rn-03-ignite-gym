@@ -4,25 +4,24 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto';
 import { StatusBar } from 'expo-status-bar';
-import { TamaguiProvider, Text, View } from 'tamagui';
+import { TamaguiProvider } from 'tamagui';
 
 import { LoadingScreen } from '@components/LoadingScreen';
+import { SignIn } from '@screens/SignIn';
 
 import tamaguiConfig from './tamagui.config';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
-
-  if (!fontsLoaded) return <LoadingScreen />;
+  const [fontsLoaded] = useFonts({
+    Roboto: Roboto_400Regular,
+    RobotoBold: Roboto_700Bold,
+  });
 
   return (
     <TamaguiProvider config={tamaguiConfig}>
       <StatusBar style="light" />
-      <View f={1} jc="center" ai="center" bc="$gray700">
-        <Text fontFamily="$roboto" fontWeight="$bold" color="$gray1">
-          Hello, world!
-        </Text>
-      </View>
+
+      {fontsLoaded ? <SignIn /> : <LoadingScreen />}
     </TamaguiProvider>
   );
 }

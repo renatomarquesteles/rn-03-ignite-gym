@@ -2,7 +2,7 @@ import { config } from '@tamagui/config/v2-native';
 import { createFont, createTamagui, createTokens } from 'tamagui';
 
 const robotoFont = createFont({
-  family: 'Roboto, sans-serif',
+  family: 'Roboto',
   size: {
     xs: 12,
     sm: 14,
@@ -18,24 +18,31 @@ const robotoFont = createFont({
     lg: 28.8,
     xl: 38.4,
   },
-  weight: {
-    regular: '400',
-    bold: '700',
+});
+
+const robotoBoldFont = createFont({
+  family: 'RobotoBold',
+  size: {
+    xs: 12,
+    sm: 14,
+    md: 16,
+    lg: 18,
+    xl: 20,
+    xxl: 24,
   },
-  letterSpacing: {
-    1: 0,
-    2: -1,
-  },
-  // (native only) swaps out fonts by face/style
-  face: {
-    400: { normal: 'Roboto' },
-    700: { normal: 'Roboto' },
+  lineHeight: {
+    xs: 19.2,
+    sm: 22.4,
+    md: 25.6,
+    lg: 28.8,
+    xl: 38.4,
   },
 });
 
 export const tokens = createTokens({
   ...config.tokens,
   color: {
+    ...config.tokens.color,
     green500: '#00b37e',
     green700: '#00875f',
     white: '#ffffff',
@@ -56,6 +63,7 @@ const appConfig = createTamagui({
     heading: robotoFont,
     body: robotoFont,
     roboto: robotoFont,
+    robotoBold: robotoBoldFont,
   },
   tokens,
 });
