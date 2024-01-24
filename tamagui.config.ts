@@ -60,7 +60,7 @@ export const tokens = createTokens({
 const appConfig = createTamagui({
   ...config,
   fonts: {
-    heading: robotoFont,
+    heading: robotoBoldFont,
     body: robotoFont,
     roboto: robotoFont,
     robotoBold: robotoBoldFont,
