@@ -8,7 +8,8 @@ const robotoFont = createFont({
     sm: 14,
     md: 16,
     lg: 18,
-    xl: 24,
+    xl: 20,
+    xxl: 24,
   },
   lineHeight: {
     xs: 19.2,
@@ -27,15 +28,14 @@ const robotoFont = createFont({
   },
   // (native only) swaps out fonts by face/style
   face: {
-    400: { normal: 'Roboto_400Regular' },
-    700: { normal: 'Roboto_700Bold' },
+    400: { normal: 'Roboto' },
+    700: { normal: 'Roboto' },
   },
 });
 
 export const tokens = createTokens({
   ...config.tokens,
   color: {
-    ...config.tokens.color,
     green500: '#00b37e',
     green700: '#00875f',
     white: '#ffffff',
@@ -46,6 +46,7 @@ export const tokens = createTokens({
     gray500: '#29292e',
     gray600: '#202024',
     gray700: '#121214',
+    red500: '#f75a68',
   },
 });
 
@@ -56,6 +57,7 @@ const appConfig = createTamagui({
     body: robotoFont,
     roboto: robotoFont,
   },
+  tokens,
 });
 
 export type AppConfig = typeof appConfig;
