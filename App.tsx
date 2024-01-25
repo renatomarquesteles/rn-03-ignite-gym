@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { TamaguiProvider } from 'tamagui';
 
 import { LoadingScreen } from '@components/LoadingScreen';
-import { SignIn } from '@screens/SignIn';
+import { SignUp } from '@screens/SignUp';
 
 import tamaguiConfig from './tamagui.config';
 
@@ -21,7 +21,7 @@ export default function App() {
     <TamaguiProvider config={tamaguiConfig}>
       <StatusBar style="light" />
 
-      {fontsLoaded ? <SignIn /> : <LoadingScreen />}
+      {fontsLoaded ? <SignUp /> : <LoadingScreen />}
     </TamaguiProvider>
   );
 }
