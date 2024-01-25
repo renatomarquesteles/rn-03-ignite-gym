@@ -7,6 +7,7 @@ export function Input({ ...rest }: InputProps) {
       h="$14"
       px="$4"
       borderWidth={0}
+      borderRadius={6}
       fontSize="$md"
       bc="$gray700"
       color="$white"

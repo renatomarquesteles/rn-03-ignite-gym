@@ -10,6 +10,7 @@ const robotoFont = createFont({
     lg: 18,
     xl: 20,
     xxl: 24,
+    4: 16,
   },
   lineHeight: {
     xs: 19.2,
@@ -29,6 +30,7 @@ const robotoBoldFont = createFont({
     lg: 18,
     xl: 20,
     xxl: 24,
+    4: 16,
   },
   lineHeight: {
     xs: 19.2,
