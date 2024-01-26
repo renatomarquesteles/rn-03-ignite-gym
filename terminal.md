@@ -8,3 +8,7 @@ npm i tamagui @tamagui/config
 
 npm i react-native-svg
 npm i -D react-native-svg-transformer
+
+npm i @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+npm i @react-navigation/native-stack
