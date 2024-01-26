@@ -1,11 +1,19 @@
 import { Heading, Image, ScrollView, Text, View, YStack } from 'tamagui';
+import { useNavigation } from '@react-navigation/native';
 
 import backgroundImg from '@assets/background.png';
 import LogoSvg from '@assets/logo.svg';
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes';
 
 export function SignIn() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
+  function handleNewAccount() {
+    navigation.navigate('signUp');
+  }
+
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
@@ -43,7 +51,11 @@ export function SignIn() {
           <Text color="$gray100" fontSize="$sm" mb="$3">
             Don't have access yet?
           </Text>
-          <Button title="Create account" variant="outlined" />
+          <Button
+            title="Create account"
+            variant="outlined"
+            onPress={handleNewAccount}
+          />
         </View>
       </YStack>
     </ScrollView>
