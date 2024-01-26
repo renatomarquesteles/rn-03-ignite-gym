@@ -21,6 +21,7 @@ export function SignIn() {
     >
       <YStack f={1} px="$10" pb="$16">
         <Image
+          defaultSource={backgroundImg}
           source={backgroundImg}
           resizeMode="contain"
           position="absolute"
