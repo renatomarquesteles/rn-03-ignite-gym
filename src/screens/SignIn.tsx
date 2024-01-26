@@ -11,7 +11,7 @@ export function SignIn() {
       contentContainerStyle={{ flexGrow: 1 }}
       showsVerticalScrollIndicator={false}
     >
-      <YStack f={1} bg="$gray700" px="$10" pb="$16">
+      <YStack f={1} px="$10" pb="$16">
         <Image
           source={backgroundImg}
           resizeMode="contain"
