@@ -2,6 +2,7 @@ import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { View, getTokenValue } from 'tamagui';
 
 import { AuthRoutes } from './auth.routes';
+import { AppRoutes } from './app.routes';
 
 export function Routes() {
   const navigationTheme = DefaultTheme;
@@ -11,7 +12,7 @@ export function Routes() {
   return (
     <View f={1} bc="$gray700">
       <NavigationContainer theme={navigationTheme}>
-        <AuthRoutes />
+        <AppRoutes />
       </NavigationContainer>
     </View>
   );
