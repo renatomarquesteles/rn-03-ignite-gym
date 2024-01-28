@@ -12,3 +12,5 @@ npm i -D react-native-svg-transformer
 npm i @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 npm i @react-navigation/native-stack
+
+npm i @tamagui/lucide-icons
