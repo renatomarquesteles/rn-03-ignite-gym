@@ -1,16 +1,25 @@
-import { Heading, ScrollView, Text, XStack, YStack } from 'tamagui';
+import { useState } from 'react';
+import { FlatList } from 'react-native';
+import { Heading, ScrollView, Text, View, XStack, YStack } from 'tamagui';
 import { LogOut } from '@tamagui/lucide-icons';
 
 import { UserPFP } from '@components/UserPFP';
 import { Group } from '@components/Group';
-import { useState } from 'react';
+import { ExerciseCard } from '@components/ExerciseCard';
 
 export function Home() {
   const groups = ['chest', 'legs', 'back', 'arms', 'shoulders'];
+  const exercises = [
+    'Bench press',
+    'Incline press',
+    'Fly',
+    'Pushup',
+    'Chest dips',
+  ];
   const [groupSelected, setGroupSelected] = useState('chest');
 
   return (
-    <YStack>
+    <YStack f={1}>
       <XStack bc="$gray600" pt="$16" pb="$5" px="$8" ai="center">
         <UserPFP
           source={{ uri: 'https://github.com/renatomarquesteles.png' }}
@@ -34,6 +43,7 @@ export function Home() {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 32, paddingVertical: 40 }}
+        maxHeight={120}
       >
         {groups.map((group) => (
           <Group
@@ -44,6 +54,27 @@ export function Home() {
           />
         ))}
       </ScrollView>
+
+      <YStack f={1} px="$8">
+        <XStack jc="space-between" mb="$5">
+          <Heading color="$gray200" fontSize="$md">
+            Exercises
+          </Heading>
+          <Text color="$gray200" fontSize="$sm">
+            {exercises.length}
+          </Text>
+        </XStack>
+        <FlatList
+          data={exercises}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => <ExerciseCard key={item} title={item} />}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingBottom: 20,
+            gap: 12,
+          }}
+        />
+      </YStack>
     </YStack>
   );
 }
